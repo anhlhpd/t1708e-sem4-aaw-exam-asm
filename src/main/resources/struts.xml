@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+
+    <package name="basicstruts2" extends="struts-default">
+        <action name="create" method="create" class="t1708e.controller.EventAction">
+            <result name="success">/new-event.jsp</result>
+            <result name="input">/new-event.jsp</result>
+        </action>
+        <action name="store" class="t1708e.controller.EventAction" method="store">
+            <result type="redirectAction">
+                <param name="actionName">list</param>
+            </result>
+            <result name="input">/new-event.jsp</result>
+        </action>
+        <action name="list" class="t1708e.controller.EventAction" method="list">
+            <result name="success">/events.jsp</result>
+        </action>
+        <action name="edit" class="t1708e.controller.EventAction" method="edit">
+            <result name="success">/new-event.jsp</result>
+        </action>
+        <action name="delete" class="t1708e.controller.EventAction" method="delete">
+            <result name="success">/new-event.jsp</result>
+        </action>
+    </package>
+</struts>
