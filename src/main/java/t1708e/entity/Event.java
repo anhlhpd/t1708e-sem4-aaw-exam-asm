@@ -1,11 +1,21 @@
 package t1708e.entity;
 
 public class Event {
+    private long id;
     private String name;
     private String time;
     private String date;
     private String place;
     private String description;
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -48,6 +58,7 @@ public class Event {
     }
 
     public static final class Builder {
+        private long id;
         private String name;
         private String time;
         private String date;
@@ -59,6 +70,11 @@ public class Event {
 
         public static Builder anEvent() {
             return new Builder();
+        }
+
+        public Builder withId(long id) {
+            this.id = id;
+            return this;
         }
 
         public Builder withName(String name) {
@@ -88,6 +104,7 @@ public class Event {
 
         public Event build() {
             Event event = new Event();
+            event.setId(id);
             event.setName(name);
             event.setTime(time);
             event.setDate(date);
