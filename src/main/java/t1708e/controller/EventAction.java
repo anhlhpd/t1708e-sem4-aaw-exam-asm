@@ -15,33 +15,6 @@ public class EventAction extends ActionSupport {
 
     static long editId = 0;
 
-    static {
-        events.add(Event.Builder.anEvent()
-                .withId(101)
-                .withName("Hello")
-                .withPlace("Hanoi")
-                .withDate("20/10")
-                .withDescription("Hallo")
-                .withTime("8:00")
-                .build());
-        events.add(Event.Builder.anEvent()
-                .withId(102)
-                .withName("Hello1")
-                .withPlace("Hanoi1")
-                .withDate("20/10")
-                .withDescription("Hallo1")
-                .withTime("8:00")
-                .build());
-        events.add(Event.Builder.anEvent()
-                .withId(103)
-                .withName("Hello1")
-                .withPlace("Hanoi1")
-                .withDate("20/10")
-                .withDescription("Hallo1")
-                .withTime("8:00")
-                .build());
-    }
-
     public String create() {
         return SUCCESS;
     }
@@ -70,7 +43,6 @@ public class EventAction extends ActionSupport {
     }
 
     public String edit(){
-        editId = this.event.getId();
         for (int i = 0 ; i< events.size() ; i++){
             if (events.get(i).getId() == editId){
                 this.setEvent(events.get(i));
@@ -106,5 +78,13 @@ public class EventAction extends ActionSupport {
 
     public void setEvents(List<Event> events) {
         EventAction.events = events;
+    }
+
+    public long getEditId() {
+        return editId;
+    }
+
+    public void setEditId(long editId) {
+        EventAction.editId = editId;
     }
 }

@@ -8,6 +8,9 @@ public class Event {
     private String place;
     private String description;
 
+    public Event() {
+        this.id = System.currentTimeMillis();
+    }
 
     public long getId() {
         return id;

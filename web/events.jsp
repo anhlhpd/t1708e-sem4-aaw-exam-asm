@@ -34,9 +34,11 @@
             </div>
             <div>
                 <s:form action="edit">
+                    <s:hidden name="editId" value="%{id}" />
                     <s:submit action="edit" value="Edit"/>
                 </s:form>
                 <s:form action="delete">
+                    <s:hidden name="editId" value="%{id}" />
                     <s:submit action="delete" value="Delete"/>
                 </s:form>
             </div>
